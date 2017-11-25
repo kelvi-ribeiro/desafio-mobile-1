@@ -1,4 +1,4 @@
-import { Component , ViewChild  } from '@angular/core';
+import { Component} from '@angular/core';
 import { IonicPage, NavController, NavParams,ModalController,ToastController } from 'ionic-angular';
 import { AgendaService } from '../../providers/agenda-service';
 
@@ -46,7 +46,7 @@ export class AgendaPage {
           if (this.agendas[i] === agenda) {
             this.agendas.splice(i, 1);
             let toast = this.toastCtrl.create({
-              message: 'Evento "' + agenda.nome + '" deleted.',
+              message: 'Evento "' + agenda.nome + '" deletado.',
               duration: 2000,
               position: 'top'
             });

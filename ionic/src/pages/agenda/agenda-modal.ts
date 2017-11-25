@@ -35,7 +35,7 @@ export class AgendaModalPage {
     let update: boolean = form['href'];
     this.agendaService.save(form).subscribe(result => {
       let toast = this.toastCtrl.create({
-        message: 'Agenda "' + form.nome + '" ' + ((update) ? 'Atualizado' : 'Adicionado') + '.',
+        message: 'Agenda "' + form.name + '" ' + ((update) ? 'Atualizado' : 'Adicionado') + '.',
         duration: 2000
       });
       toast.present();
