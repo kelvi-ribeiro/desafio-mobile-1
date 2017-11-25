@@ -13,7 +13,7 @@ public class AgendaCommandLineRunner implements CommandLineRunner {
         this.repository = repository;
     }
 
-    // Essa classe tem a função de gerar os dados
+    // Essa classe tem a função de gerar os dados automaticamente
     @Override
     public void run(String... strings) throws Exception {        
     	
