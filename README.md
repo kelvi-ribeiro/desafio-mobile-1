@@ -1,4 +1,4 @@
-<p align="center"><img src="http://unigranrio.com.br/ead/img/logo_final.png" /></p>
+﻿<p align="center"><img src="http://unigranrio.com.br/ead/img/logo_final.png" /></p>
 
 # Desafio Mobile
 
@@ -38,3 +38,8 @@ Caso não consiga fazer alguma coisa dentro do tempo determinado, envie o projet
 
 
 ### Seja criativo, nossa equipe preza muito isso!
+
+
+##Link de um vídeo de apresentação da aplicação: https://www.youtube.com/watch?v=i_Vh2yadwfA&feature=youtu.be
+
+
