@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { AgendaPage } from './agenda';
+import { AgendaService } from '../../providers/agenda-service';
+
 
 @NgModule({
   declarations: [
@@ -9,5 +11,10 @@ import { AgendaPage } from './agenda';
   imports: [
     IonicPageModule.forChild(AgendaPage),
   ],
+  providers: [
+    AgendaService
+   
+  ]
 })
+
 export class AgendaPageModule {}

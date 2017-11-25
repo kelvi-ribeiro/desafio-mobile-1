@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component , ViewChild  } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AgendaService } from '../../providers/agenda-service';
+
+
 
 /**
  * Generated class for the AgendaPage page.
@@ -14,12 +17,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'agenda.html',
 })
 export class AgendaPage {
+  private agendas: Array<any>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              public agendaService:AgendaService) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AgendaPage');
+    this.agendaService.getAgendas().subscribe(agendas => {
+      this.agendas = agendas;
+      
+    })
   }
-
+  
 }
