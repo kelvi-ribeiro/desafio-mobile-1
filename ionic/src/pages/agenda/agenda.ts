@@ -1,6 +1,10 @@
 import { Component , ViewChild  } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ModalController,ToastController } from 'ionic-angular';
 import { AgendaService } from '../../providers/agenda-service';
+
+import{AgendaModalPage} from './agenda-modal'
+
+
 
 
 
@@ -20,14 +24,35 @@ export class AgendaPage {
   private agendas: Array<any>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              public agendaService:AgendaService) {
+              public agendaService:AgendaService, public modalCtrl: ModalController,
+              public toastCtrl: ToastController) {
   }
 
   ionViewDidLoad() {
     this.agendaService.getAgendas().subscribe(agendas => {
       this.agendas = agendas;
       
-    })
+    });
   }
-  
-}
+  openModal(AgendaId) {
+    let modal = this.modalCtrl.create(AgendaModalPage, AgendaId);
+    modal.present();
+    // refresh data after modal dismissed
+    modal.onDidDismiss(() => this.ionViewDidLoad())
+  }
+    remove(agenda) {
+      this.agendaService.remove(agenda.id).subscribe(response => {
+        for (let i = 0; i < this.agendas.length; i++) {
+          if (this.agendas[i] === agenda) {
+            this.agendas.splice(i, 1);
+            let toast = this.toastCtrl.create({
+              message: 'Evento "' + agenda.nome + '" deleted.',
+              duration: 2000,
+              position: 'top'
+            });
+            toast.present();
+          }
+        }
+      });
+    }
+  }

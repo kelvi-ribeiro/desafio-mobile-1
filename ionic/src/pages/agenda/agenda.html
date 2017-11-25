@@ -1,13 +1,18 @@
 <ion-header>
-    <ion-navbar>
-      <ion-title>Minha agenda</ion-title>
-    </ion-navbar>
-  </ion-header>
-  
+  <ion-navbar>
+    <ion-title>Minha agenda</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openModal()" color="primary">
+        <ion-icon name="add-circle"></ion-icon>
+        <ion-icon name="calendar"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
   <ion-content  padding>
     <ion-list>
         <ion-item-sliding *ngFor="let agenda of agendas">
-      <ion-item class="contorno">
+          <ion-item class="contorno" (click)="openModal({id: agenda.id})">
        
      <ion-item >
         <h2>Nome do evento:{{agenda.nome}}</h2>
