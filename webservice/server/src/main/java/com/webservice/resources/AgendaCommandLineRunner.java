@@ -1,9 +1,8 @@
-package com.webservice.repository;
+package com.webservice.resources;
+import com.webservice.models.Agenda;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
-import com.webservice.models.Agenda;
 
 @Component
 public class AgendaCommandLineRunner implements CommandLineRunner {
