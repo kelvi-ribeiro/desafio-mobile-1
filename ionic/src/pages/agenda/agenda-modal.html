@@ -1,0 +1,57 @@
+<ion-header>
+        <ion-toolbar>
+          <ion-title>
+            {{agenda ? 'Agenda Details' : 'Add Agenda'}}
+          </ion-title>
+          <ion-buttons start>
+            <button ion-button (click)="dismiss()">
+              <span ion-text color="primary" showWhen="ios,core">Cancel</span>
+              <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+            </button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content padding>
+        <form #agendaForm="ngForm" (ngSubmit)="save(agendaForm.value)">
+          <input type="hidden" name="href" [(ngModel)]="agenda.href">
+          <ion-row>
+            <ion-col>
+              <ion-list inset>
+                <ion-item>
+                  <ion-input placeholder="Nome da agenda" name="nome" type="text"
+                             required [(ngModel)]="agenda.nome" #nome></ion-input>
+                </ion-item>
+                <ion-item>
+                        <ion-input placeholder="Descrição da agenda" name="descricao" type="text"
+                                   required [(ngModel)]="agenda.descricao" #descricao></ion-input>
+                      </ion-item>
+                      <ion-item>
+                            <ion-input placeholder="Inicio do Dia do evento" name="dataInicio" type="date"
+                                       required [(ngModel)]="agenda.dataInicio" #dataInicio></ion-input>
+                          </ion-item>
+                          <ion-item>                                
+                                        <ion-input placeholder="Horário de início" name="horaInicio" type="time"
+                                                   required [(ngModel)]="agenda.horaInicio" #horaInicio></ion-input>
+                                      </ion-item>
+                                      <ion-item>
+                                <ion-input placeholder="Fim do Dia evento" name="dataFim" type="date"
+                                           required [(ngModel)]="agenda.dataFim" #dataFim></ion-input>
+                              </ion-item>
+
+                              <ion-item>
+                                    <ion-input placeholder="Horário de encerramento" name="horafim" type="time"
+                                               required [(ngModel)]="agenda.horaFim" #horaFim></ion-input>
+                                  </ion-item>
+              </ion-list>
+            </ion-col>
+          </ion-row>
+          
+          <ion-row>
+            <ion-col>
+              <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+              <button ion-button color="primary" full type="submit"
+                      [disabled]="!agendaForm.form.valid">Save</button>
+            </ion-col>
+          </ion-row>
+        </form>
+      </ion-content>
