@@ -1,6 +1,8 @@
-import { Component} from '@angular/core';
-import { IonicPage, NavController, NavParams,ModalController,ToastController } from 'ionic-angular';
+import { Component, OnInit} from '@angular/core';
+import { IonicPage, NavController, NavParams,ModalController,ToastController ,LoadingController} from 'ionic-angular';
 import { AgendaService } from '../../providers/agenda-service';
+
+import { Http } from "@angular/http";
 
 import{AgendaModalPage} from './agenda-modal'
 
@@ -20,12 +22,32 @@ import{AgendaModalPage} from './agenda-modal'
   selector: 'page-agenda',
   templateUrl: 'agenda.html',
 })
-export class AgendaPage {
+export class AgendaPage  implements OnInit{
   private agendas: Array<any>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public agendaService:AgendaService, public modalCtrl: ModalController,
-              public toastCtrl: ToastController) {
+              public toastCtrl: ToastController,private _loadingCtrl: LoadingController,
+              private _http: Http) {
+  }
+  ngOnInit(){
+    let loader = this._loadingCtrl.create({
+			content: 'Carregando sua agenda...'
+    });
+  
+
+		loader.present();
+		this._http
+			.get("http://localhost:8080/minhas-agendas")
+			.map(res => res.json())
+			.toPromise()
+			.then(agendas => {
+					this.agendas = agendas;
+					loader.dismiss();
+			})
+			.catch(err => {
+					console.log(err);
+			});
   }
 
   ionViewDidLoad() {
