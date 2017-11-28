@@ -42,4 +42,11 @@ Caso não consiga fazer alguma coisa dentro do tempo determinado, envie o projet
 
 ##Link de um vídeo de apresentação da aplicação: https://www.youtube.com/watch?v=i_Vh2yadwfA&feature=youtu.be
 
+##Sobre o Projeto
+
+Sobre o projeto, eu não tinha experiência com o pull request e nunca tinha “forkado” nenhum outro projeto, pois só usei o Git nos meus repositórios. Então eu criei um repositório Git no meu Pc e fui desenvolvendo o projeto, mas só depois percebi que deveria ter “forkado” o projeto e começado a partir daí: ss
+        Então assim  que já estava quase tudo pronto, eu dei um fork no projeto desafio-mobile e fui colando tudo que estava no repositório que eu havia criado inicialmente e corrigi apenas alguns erros e adicionei mais algumas linhas de código. Por isso existem únicos commits com várias alterações e parecendo que tudo foi feito em um dia. Mas levei mais ou menos quatro dias para desenvolver o projeto. Longas noites indo até as 5 da manhã para aprender como usar o Ionic e integra-lo com um WebService gerado pelo spring boot, mas valeu muito a pena. 
+         Nesse miniprojeto, percebi que desenvolver uma aplicação para mobile é muito simples e muito menos trabalhoso do que eu pensei, levei alguma dificuldade para achar tutoriais, a maior parte estava em inglês, então eu tive que dar meu jeito rs
+         Gostaria muito de fazer parte da equipe de vocês, pois sempre quis ser desenvolvedor mobile. Eu agradeço a oportunidade e espero o FeedBack :D
+
 
